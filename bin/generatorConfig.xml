@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+  <!-- 配置mysql 驱动jar包路径.用了绝对路径 -->
+  <classPathEntry location="E:\workspace\MyBatis\WebContent\WEB-INF\lib\mysql-connector-java-5.1.29.jar" />
+  <context id="yihaomen_mysql_tables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" 
+    connectionURL="jdbc:mysql://127.0.0.1:3306/mybatis?characterEncoding=utf-8" 
+    userId="root" password="root" />
+    <javaModelGenerator targetPackage="com.yihaomen.model" targetProject="exercise/src" />
+    <sqlMapGenerator targetPackage="com.yihaomen.mapper" targetProject="exercise/src" />
+    <javaClientGenerator targetPackage="com.yihaomen.dao" targetProject="exercise/src" type="XMLMAPPER" />
+    <table schema="mybatis" tableName="user" >
+      
+    </table>
+  </context>
+</generatorConfiguration>
