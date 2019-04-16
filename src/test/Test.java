@@ -1,10 +1,10 @@
 package test;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
+import static oracle.net.aso.C05.b;
 
 public class Test {
 	
@@ -102,6 +102,42 @@ public class Test {
 		// 姓名脱敏 **字
 		String name = "js收货人";
 		System.out.println(name.replaceAll("\\S(?=\\S{1})", "*"));
+
+		// 收货地址脱敏 **字
+		String address = "广东省深圳市南山区";
+		System.out.println(address.replaceAll("(?<=市)\\S*", "******"));
+	}
+
+
+	/**
+	 * 测试HashMap对key为null时的存储
+	 */
+	@org.junit.Test
+	public void putForNullKey(){
+		Map map = new HashMap();
+		map.put(null,"11");
+
+		Map map1 = new ConcurrentHashMap();
+	}
+
+
+	@org.junit.Test
+	public void link(){
+		List linkedList = new LinkedList();
+		linkedList.add(0,"A");
+		linkedList.add(0,"B");
+		int b = linkedList.indexOf("A");
+		System.out.println(b);
+	}
+
+	@org.junit.Test
+	public void set(){
+		Set set = new HashSet();
+		set.add("A");
+		set.add("B");
+		String next = set.iterator().next().toString();
+
+		System.out.println(next);
 	}
 	
 }
