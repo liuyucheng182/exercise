@@ -3,6 +3,8 @@ package test;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static oracle.net.aso.C05.b;
 
@@ -142,5 +144,21 @@ public class Test {
 
 //github中修改
 
-	
-}
+
+	private static Pattern datePatter = Pattern.compile("(\\d{4}-\\d{2}-\\d{2})");
+	@org.junit.Test
+	public void matchDate(){
+		String dates = "2019-01-01 ~ 2019-03-03";
+		Matcher matcher = datePatter.matcher(dates);
+		List<String> list = new ArrayList<String>();
+		while (matcher.find()){
+			list.add(matcher.group());
+		}
+
+		for (String s : list){
+			System.out.println(s);
+		}
+	}
+
+	}
+
